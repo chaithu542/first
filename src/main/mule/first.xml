@@ -9,13 +9,13 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 		<http:listener-connection host="0.0.0.0" port="8081" />
 	</http:listener-config>
 	<flow name="firstFlow" doc:id="5ae98311-daf2-4f7c-8a88-785022a5c89b" >
-		<http:listener doc:name="Listener" doc:id="394fb6d1-603f-4801-87f8-7a4ec16faad0" config-ref="HTTP_Listener_config" path="/*"/>
+		<http:listener doc:name="Listener" doc:id="394fb6d1-603f-4801-87f8-7a4ec16faad0" config-ref="HTTP_Listener_config" path="/first"/>
 		<ee:transform doc:name="Transform Message" doc:id="55f36108-7f5f-40eb-bfa2-927cf4e9e8e8" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
 output application/json
 ---
-'First Project']]></ee:set-payload>
+'First Project - modification']]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
 	</flow>
